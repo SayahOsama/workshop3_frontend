@@ -10,7 +10,7 @@ export const AuthApi = {
     login: async ({ username, password }: Credentials): Promise<APIStatus> => {
         try {
              // Make a request to the server to login
-             const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/login', { username, password });
+             const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/login', { username, password },{ withCredentials: true });
             //  const response = await axios.post('http://localhost:3003/api/login', { username, password },{ withCredentials: true });
              if (response.status === 200) {
                  return APIStatus.Success;
@@ -24,7 +24,7 @@ export const AuthApi = {
     signUp: async ({ username, password }: Credentials): Promise<APIStatus> => {
         try {
             // Make a request to the server to sign up
-            const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/signup', { username, password });
+            const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/signup', { username, password },{ withCredentials: true });
             // const response = await axios.post('http://localhost:3003/api/signup', { username, password },{ withCredentials: true });
             if (response.status === 201) {
                 return APIStatus.Success;
