@@ -11,6 +11,7 @@ export const AuthApi = {
         try {
              // Make a request to the server to login
              const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/login', { username, password });
+            //  const response = await axios.post('http://localhost:3003/api/login', { username, password },{ withCredentials: true });
              if (response.status === 200) {
                  return APIStatus.Success;
              } else {
@@ -24,6 +25,7 @@ export const AuthApi = {
         try {
             // Make a request to the server to sign up
             const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/signup', { username, password });
+            // const response = await axios.post('http://localhost:3003/api/signup', { username, password },{ withCredentials: true });
             if (response.status === 201) {
                 return APIStatus.Success;
             } else {
@@ -37,6 +39,7 @@ export const AuthApi = {
         try {
             // Make a request to the server to logout
             const response = await axios.post('https://workshop3-backend-9qwy.onrender.com/api/logout',{ withCredentials: true });
+            // const response = await axios.post('http://localhost:3003/api/logout',{ withCredentials: true });
             if (response.status === 200) {
                 return APIStatus.Success;
             } else {
@@ -50,6 +53,7 @@ export const AuthApi = {
         try {
             // Make a request to the server to get the username
             const response = await axios.get('https://workshop3-backend-9qwy.onrender.com/api/username',{ withCredentials: true });
+            // const response = await axios.get('http://localhost:3003/api/username',{ withCredentials: true });
             if (response.status === 200) {
                 return response.data.username;
             } else {
